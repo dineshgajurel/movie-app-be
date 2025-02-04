@@ -16,9 +16,9 @@ app.use(express.json());
 app.use(morgan('dev')); // logging middleware
 
 // Routes
-app.use('/', (req, res) => {
+app.get('/', (req, res) => {
   return res.json({ message: 'Welcome to the Movie App API!' });
-})
+});
 
 app.use('/api/movies', movieRoutes);
 app.use('/api/search', searchRoutes);
